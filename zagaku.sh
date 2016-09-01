@@ -2,6 +2,8 @@
 
 BLUE='\033[0;36m'
 GREEN='\033[0;32m'
+PURPLE='\033[0;35m'
+RED='\033[0;31m'
 NC='\033[0m'
 LEFT_MARGIN="     "
 
@@ -100,9 +102,16 @@ slide_6 () {
  echo
  echo -e "$LEFT_MARGIN${BLUE}Functions${NC}"
  echo
- echo "$LEFT_MARGIN      *  to define a function"
- echo -e "$LEFT_MARGIN      *    ${GREEN}function FUNCTION { COMMANDS; }${NC}"
- echo -e "$LEFT_MARGIN      *    ${GREEN}FUNCTION() { COMMANDS; }${NC}"
+ echo "$LEFT_MARGIN  *  to define a function"
+ echo -e "$LEFT_MARGIN      *  ${GREEN}function FUNCTION { COMMANDS }${NC}"
+ echo -e "$LEFT_MARGIN      *  ${GREEN}FUNCTION () { COMMANDS }${NC}"
+ echo -e "$LEFT_MARGIN      *  ${GREEN}slide_6 () { #this text right here }${NC}"
+ echo
+ echo "$LEFT_MARGIN  *  positional parameters"
+ echo -e "$LEFT_MARGIN      *  ${GREEN}slide_6 \"purple\" \"red\"${NC}"
+ echo -e "$LEFT_MARGIN      *      ${GREEN}\$1: ${PURPLE}$1${NC}"
+ echo -e "$LEFT_MARGIN      *      ${GREEN}\$2: ${RED}$2${NC}"
+
 }
 
 slide_7 () {
@@ -131,7 +140,7 @@ slide_4
 read
 slide_5
 read
-slide_6
+slide_6 "purple" "red"
 read
 slide_7
 read
